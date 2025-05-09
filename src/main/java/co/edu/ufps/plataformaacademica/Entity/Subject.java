@@ -9,4 +9,11 @@ public class Subject {
     private List<Student> students;
     private List<SubjectSchedule> schedules;
     private List<Evaluation> evaluations;
+
+    public void setTeacher(String teacher) {
+    }
+
+    public void setTeacherId(Long teacherId) {
+
+    }
 }

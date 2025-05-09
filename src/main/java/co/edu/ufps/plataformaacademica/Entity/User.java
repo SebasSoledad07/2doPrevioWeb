@@ -1,6 +1,6 @@
 package co.edu.ufps.plataformaacademica.Entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,11 +9,18 @@ import lombok.Setter;
 @Setter
 public class User {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
+
+    @Column(unique = true , nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
+
     public RoleEnum role;
 
-    public enum RoleEnum{ ADMIN, TEACHER, STUDENT}
 }

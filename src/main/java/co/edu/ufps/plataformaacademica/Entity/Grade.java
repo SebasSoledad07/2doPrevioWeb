@@ -1,6 +1,7 @@
 package co.edu.ufps.plataformaacademica.Entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Grade {
 
