@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface SubjectEnrollmentRepository extends JpaRepository<SubjectEnrollment, Long> {
-    boolean existsByStudentAndSubject(Student student, Subject subject);
-    List<SubjectEnrollment> findByStudentId(Long studentId);
 
-    void deleteAllBySubject(Subject subject);
+    List<SubjectEnrollment> findByStudent(Student student);
+
+    boolean existsByStudentAndSubject(Student student, Subject subject);
 }
