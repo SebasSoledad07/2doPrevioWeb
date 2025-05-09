@@ -9,8 +9,6 @@ import java.util.List;
 
 import co.edu.ufps.plataformaacademica.Entity.Subject;
 import co.edu.ufps.plataformaacademica.Service.SubjectService;
-import co.edu.ufps.plataformaacademica.CreateSubjectRequest;
-;
 
 @RestController
 @RequestMapping("/api/subjects")
@@ -21,12 +19,6 @@ public class SubjectController {
     @Autowired
     public SubjectController(SubjectService subjectService) {
         this.subjectService = subjectService;
-    }
-
-    @PostMapping
-    public ResponseEntity<Subject> createSubject(@RequestBody CreateSubjectRequest request) {
-        Subject subject = subjectService.createSubject(request.getTeacher(), request.getTeacherId());
-        return ResponseEntity.ok(subject);
     }
 
     @PostMapping("/{subjectId}/assign/{studentId}")
@@ -51,4 +43,3 @@ public class SubjectController {
         return ResponseEntity.noContent().build();
     }
 }
-
